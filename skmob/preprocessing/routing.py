@@ -52,8 +52,8 @@ def route(tdf, G=None, index_origin=0, index_destin=-1):
     # nodes, _ = ox.graph_to_gdfs(G)
 
     # closest points to origin and destination on graph
-    closest_o_i = ox.utils.get_nearest_node(G, origin_coords)
-    closest_d_i = ox.utils.get_nearest_node(G, destin_coords)
+    closest_o_i = ox.get_nearest_node(G, origin_coords)
+    closest_d_i = ox.get_nearest_node(G, destin_coords)
 
     # find shortest path
     shortest_route = ox.nx.shortest_path(G, closest_o_i, closest_d_i, weight='length')
